@@ -17,7 +17,11 @@ addBtn.addEventListener('click',e=>{
             if(countryInput.value){
                 country=countryInput.value;
                 if(scoreInput.value){
-                    score=Number(scoreInput.value);
+                    if(scoreInput.value<0 || scoreInput.value>100){
+                        isError=true;
+                    }else{
+                        score=Number(scoreInput.value);
+                    }
                 }else{
                     isError=true;
                 }
@@ -32,6 +36,9 @@ addBtn.addEventListener('click',e=>{
     }
     if(isError){
         alertBox.textContent='All fields are required';
+        if(scoreInput.value<0 || scoreInput.value>100){
+            alertBox.textContent='Score must be between 0 and 100';
+        }
         alertBox.style.display='block';
         showResults();
     }else{
