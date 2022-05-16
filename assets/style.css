@@ -7,6 +7,10 @@ h1{
 .input-section{
     text-align: center;
     margin-bottom: 70px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 .input-section input{
     border: 1px solid rgb(86, 155, 245) ;
@@ -14,6 +18,7 @@ h1{
     padding-left: 5px;
     width: 150px;
     height: 35px;
+    margin-right: 5px;
 }
 .input-section button{
     background-color: rgb(86, 155, 245);
@@ -65,4 +70,53 @@ h1{
     padding: 10px;
     margin: auto 30px;
     display: none;
+}
+@media(max-width:900px){
+    .input-section{
+        display: grid;
+        grid-template-columns: 200px 200px;
+    }
+    .input-section input{
+        margin-bottom: 10px;
+    }
+    .output-section .output-row{
+        display: grid;
+        grid-template-columns: 40% 30% 30%;
+        justify-content: space-evenly;
+    }
+    .output-row .btn-box{
+        grid-column: 3/4;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+    .output-row .name,.country,.score{
+        align-items: center;
+    }
+}
+@media(max-width:665px){
+    .input-section{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        justify-content: center;
+        text-align: center;
+        margin-left: 5%;
+    }
+    .input-section input{
+        width: 100%;
+        margin-right: 0;
+    }
+    .input-section button{
+        width: 102%;
+    }
+    .output-section .output-row{
+        display:flex;
+        flex-direction: column;   
+    }
+    .output-row .name,.country,.score{
+        margin: 10px auto;
+    }
+    .output-row .btn-box{
+        margin-right: 0;
+    }
 }
